@@ -19,15 +19,17 @@ never edit it by hand, and do not expect a hand-written list anywhere to be auth
 ## Contributing a protocol
 
 Read [`PROTOCOL_STANDARD.md`](https://github.com/waldronlab/agent-protocol-standard/blob/main/PROTOCOL_STANDARD.md)
-first; it is the authority on the format, and CI enforces it on every pull request. See
-[CONTRIBUTING.md](CONTRIBUTING.md).
+first; it is the authority on the format, and CI enforces it on every pull request that touches
+`protocols/`. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Discovery
 
 Agents find these protocols by fetching
-[`registry.yaml`](https://github.com/waldronlab/agent-protocol-standard/blob/main/registry.yaml)
-from the standard repository, following this repository's `index_url` to `PROTOCOLS.yaml`, and then
-following each protocol's `protocol_url`.
+[`registry.yaml`](https://raw.githubusercontent.com/waldronlab/agent-protocol-standard/main/registry.yaml)
+from the standard repository, following this repository's `index_url` to
+[`PROTOCOLS.yaml`](https://raw.githubusercontent.com/waldronlab/agent-protocols/main/PROTOCOLS.yaml),
+and then following each protocol's `protocol_url`. Those are raw URLs, not the HTML views: an agent
+following the documented URL must receive parseable YAML.
 
 ## License
 
