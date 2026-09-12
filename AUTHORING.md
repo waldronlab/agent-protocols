@@ -198,6 +198,12 @@ citing an application paper to fill the field is exactly the error this guide is
 `method_citation` is optional in the standard; a purely descriptive or reporting protocol may have nothing to
 cite at all.
 
+Be careful about the scope of that permission. It covers protocols that **do not claim a method** —
+a study-characteristics table, a corpus summary, a cohort-assembly procedure. An atomic protocol that
+*does* perform a named method is a different case: if you cannot find its source, that is a question to
+escalate, not a field to leave blank. The standard requires exactly one `method_citation` for an atomic
+protocol, so quietly omitting it produces something that should not validate.
+
 If you hit this, raise it as an issue in
 [`waldronlab/agent-protocol-standard`](https://github.com/waldronlab/agent-protocol-standard/issues).
 The standard may need a way to express "classical method, no primary source", and that is a decision
@@ -205,12 +211,15 @@ about the format, which is not made in this repository.
 
 ## Before you open the pull request
 
-- The protocol describes one method, and you can name the paper that proposed it.
+- For an atomic protocol claiming a method: it describes one method, and you can name the paper that
+  proposed it. For a composite: it adds no steps of its own and carries no `method_citation`. For a
+  descriptive or reporting protocol: it claims no method, and says so.
 - It is a unit someone would compose into more than one analysis, with a plausible substitute.
 - `method_citation` names the method's origin; `protocol_citation`, if present, describes this procedure.
 - If a sibling protocol shares your `method_citation`, `## Notes` says how yours differs.
 - Someone could execute it without reading any code.
-- Every parameter has a stated default and a reason.
+- Every *optional* parameter has a stated default and a reason. Required inputs — a dataset, a
+  covariate, a candidate list — are named as required, with no invented default.
 - The out-of-scope section exists and is specific.
 - The validator passes:
 
