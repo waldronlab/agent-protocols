@@ -221,3 +221,7 @@ about the format, which is not made in this repository.
 
   Note that the validator checks conformance, not correctness. It cannot tell you that you cited the
   wrong paper, bundled two methods, or left a decision implicit. Those are what review is for.
+
+The format itself is pre-1.0 (`spec_version: 0.1.0`) and still changing. If a rule here gets in the way
+of describing a method honestly, that is worth raising as an issue rather than working around — the
+standard is young enough to be corrected.

@@ -1,6 +1,6 @@
-spec_version: 2.0.0
+spec_version: 0.1.0
 repository: waldronlab/agent-protocols
-generated_at: '2026-09-12T19:07:39Z'
+generated_at: '2026-09-12T19:14:58Z'
 protocols:
 - name: humann4-augmented-clustering
   description: Predict ORFs and perform augmented UniRef-compatible protein clustering.
