@@ -19,11 +19,14 @@ status: draft
 license: CC-BY-4.0
 type: composite
 
-protocol_doi: ~
-repository_doi: ~
-publication_doi: ~
+artifact_doi: ~
+collection_doi: ~
 
-citation: "10.7554/eLife.65088"
+protocol_citation: ~
+
+# The bioBakery paper proposes this database-construction pipeline as a method, so it belongs here even
+# though the protocol is composite. The constituent protocols' own method_citations are inherited.
+method_citation: "10.7554/eLife.65088"
 
 upstream_repositories:
   - "https://github.com/biobakery/humann"

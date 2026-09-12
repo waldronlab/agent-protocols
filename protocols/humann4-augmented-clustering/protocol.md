@@ -19,11 +19,11 @@ status: draft
 license: CC-BY-4.0
 type: atomic
 
-protocol_doi: ~
-repository_doi: ~
-publication_doi: ~
+artifact_doi: ~
+collection_doi: ~
+protocol_citation: ~
 
-citation: "10.1016/j.cell.2019.01.001"
+method_citation: "10.1016/j.cell.2019.01.001"
 
 upstream_repositories:
   - "https://github.com/biobakery/humann"

@@ -7,12 +7,19 @@ in `waldronlab/agent-protocol-standard` is the authority on what a `protocol.md`
 repository holds content only; it does not define or extend the format. If you believe the format
 itself needs to change, open an issue there rather than working around it here.
 
+## Deciding what to write
+
+This file covers mechanics. [`AUTHORING.md`](AUTHORING.md) covers the judgement calls the mechanics
+cannot check: finding the paper that actually proposed a method, recognizing when what looks like one
+protocol is really two, when alternatives may live inside a single protocol, and what to state as out
+of scope. Read it before writing a new protocol.
+
 ## Adding a protocol
 
 1. Create `protocols/<name>/protocol.md`. The directory name must exactly match the `name` field in
    the YAML frontmatter.
 2. Fill in the required frontmatter — `name`, `description`, `version`, `authors`, `date`, `status` —
-   and the provenance fields that apply. An atomic protocol carries exactly one `citation` naming the
+   and the provenance fields that apply. An atomic protocol carries exactly one `method_citation` naming the
    primary literature where the method was published.
 3. End the file with a `## History & Reviews` section. A first release has one version entry, a
    `#### Changes` bullet list, and `*No reviews yet.*` under `#### Reviews`; omit the `reviews:`
