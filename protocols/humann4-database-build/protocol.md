@@ -19,11 +19,11 @@ status: draft
 license: CC-BY-4.0
 type: composite
 
-protocol_doi: ~
-repository_doi: ~
-publication_doi: ~
+artifact_doi: ~
+collection_doi: ~
+protocol_citation: ~
 
-citation: "10.7554/eLife.65088"
+method_citation: "10.7554/eLife.65088"
 
 upstream_repositories:
   - "https://github.com/biobakery/humann"

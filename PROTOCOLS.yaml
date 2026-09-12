@@ -1,6 +1,6 @@
-spec_version: 1.0.0
+spec_version: 2.0.0
 repository: waldronlab/agent-protocols
-generated_at: '2026-09-11T19:08:40Z'
+generated_at: '2026-09-12T19:07:39Z'
 protocols:
 - name: humann4-augmented-clustering
   description: Predict ORFs and perform augmented UniRef-compatible protein clustering.
@@ -21,10 +21,10 @@ protocols:
   status: draft
   license: CC-BY-4.0
   type: atomic
-  protocol_doi: ~
-  repository_doi: ~
-  publication_doi: ~
-  citation: 10.1016/j.cell.2019.01.001
+  artifact_doi: ~
+  collection_doi: ~
+  protocol_citation: ~
+  method_citation: 10.1016/j.cell.2019.01.001
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
@@ -63,10 +63,10 @@ protocols:
   status: draft
   license: CC-BY-4.0
   type: atomic
-  protocol_doi: ~
-  repository_doi: ~
-  publication_doi: ~
-  citation: 10.7554/eLife.65088
+  artifact_doi: ~
+  collection_doi: ~
+  protocol_citation: ~
+  method_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
@@ -104,10 +104,10 @@ protocols:
   status: draft
   license: CC-BY-4.0
   type: composite
-  protocol_doi: ~
-  repository_doi: ~
-  publication_doi: ~
-  citation: 10.7554/eLife.65088
+  artifact_doi: ~
+  collection_doi: ~
+  protocol_citation: ~
+  method_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
@@ -161,10 +161,10 @@ protocols:
   status: draft
   license: CC-BY-4.0
   type: atomic
-  protocol_doi: ~
-  repository_doi: ~
-  publication_doi: ~
-  citation: 10.1016/j.cell.2019.01.001
+  artifact_doi: ~
+  collection_doi: ~
+  protocol_citation: ~
+  method_citation: 10.1016/j.cell.2019.01.001
   upstream_repositories:
   - https://github.com/biobakery/metaphlan
   - https://github.com/biobakery/panphlan
@@ -201,10 +201,10 @@ protocols:
   status: draft
   license: CC-BY-4.0
   type: atomic
-  protocol_doi: ~
-  repository_doi: ~
-  publication_doi: ~
-  citation: 10.7554/eLife.65088
+  artifact_doi: ~
+  collection_doi: ~
+  protocol_citation: ~
+  method_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/biobakery-nextflow
@@ -238,10 +238,10 @@ protocols:
   status: draft
   license: CC-BY-4.0
   type: atomic
-  protocol_doi: ~
-  repository_doi: ~
-  publication_doi: ~
-  citation: 10.7554/eLife.65088
+  artifact_doi: ~
+  collection_doi: ~
+  protocol_citation: ~
+  method_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/eggnogdb/eggnog-mapper
@@ -277,7 +277,7 @@ protocols:
   status: draft
   type: atomic
   license: CC-BY-4.0
-  citation: 10.1073/pnas.0914005107
+  method_citation: 10.1073/pnas.0914005107
   protocols_used: []
   category: Statistical Analysis
   tags:

@@ -21,7 +21,7 @@ to imitate for tone and level of detail.
 
 ## One method, one citation, and cite its origin
 
-An atomic protocol carries exactly one citation: the primary literature where the method was
+An atomic protocol carries exactly one `method_citation`: the primary literature where the method was
 **originally published**. Not the paper you took the analysis from. Not the paper that made the method
 popular. The one that proposed it.
 
@@ -30,43 +30,56 @@ step too early. In a recent batch, leave-one-dataset-out validation looked like 
 Pasolli et al. 2016 — a microbiome machine-learning paper — until the question got pushed further
 back to Riester et al. 2014, which introduced the term and the procedure in ovarian cancer expression
 data. Pasolli is the first *microbiome* use, which is a different and much narrower claim. Both facts
-belong in the protocol; only one of them belongs in `citation`.
+belong in the protocol; only one of them belongs in `method_citation`.
 
 Expect to find that a method you assumed was invented by the lab's own paper is decades older, and
 occasionally the reverse. Where a lab paper genuinely did propose the method, citing it is correct —
 that is the exception, not the pattern.
 
-## `citation`, `publication_doi`, and the other two DOI fields
+## The four citation and DOI fields
 
-Four frontmatter fields hold a DOI, and they are not interchangeable. The axis that separates them is
-**what is being identified** — the method, this document, a paper about this document, or the
-collection it lives in.
+Four frontmatter fields hold a DOI, and each name says what it identifies. The `*_citation` fields
+reference other works; the `*_doi` fields identify things.
 
 | Field | Identifies | Points at |
 |---|---|---|
-| `citation` | The **method** this protocol performs | The primary literature that first proposed it |
-| `publication_doi` | A **peer-reviewed paper that describes or validates this protocol** | A publication of the procedure as written here |
-| `protocol_doi` | **This protocol artifact** | A DOI minted for this document, e.g. from protocols.io |
-| `repository_doi` | The **collection** housing it | A Zenodo record for the repository |
+| `method_citation` | the **method** this protocol performs | the primary literature that first proposed it |
+| `protocol_citation` | a publication **describing or validating this protocol** | the procedure as written here, including its parameterization |
+| `artifact_doi` | **this document**, as a citable artifact | a DOI minted for it, e.g. from protocols.io |
+| `collection_doi` | the **repository or collection** housing it | a Zenodo record |
 
-`citation` and `publication_doi` are the pair that get confused, because both can point at a paper that
-contains the method. The difference is what the paper is being credited for. `citation` credits an
-invention; `publication_doi` credits a description of this specific procedure.
+`method_citation` and `protocol_citation` are the pair worth dwelling on, because both can point at a paper
+containing the method. The difference is what the paper is credited for, and it runs along a specific axis:
+**`method_citation` describes the method in general; `protocol_citation` describes precise usage** — the
+parameter values, thresholds and choices this protocol fixes.
+
+**That means one method can be the basis of several protocols.** Random forest classification is one method
+with one origin, but two published parameterizations of it are genuinely different procedures that produce
+different results from the same inputs. Each is its own protocol. They share a `method_citation` and are told
+apart by their `protocol_citation`.
+
+This is worth holding onto, because it is what keeps the one-method-one-citation rule from forcing unlike
+procedures into a single document. If two candidate protocols perform the same method but fix different
+parameters from different published sources, the rule is not telling you to merge them. Sibling protocols are
+a legitimate shape.
 
 **The test: if you rewrote the protocol's steps, would the DOI still be right?**
 
-- `citation` — yes. A method's origin does not change when you revise how you describe it. It changes
+- `method_citation` — yes. A method's origin does not change when you revise how you describe it. It changes
   only if you change *which method* the protocol performs, which makes it a different protocol.
-- `publication_doi` — no. It is coupled to the protocol's content. Revise the steps away from what the
+- `protocol_citation` — no. It is coupled to the protocol's content. Revise the steps away from what the
   paper describes and the paper no longer describes this protocol.
 
-A worked case: a protocol for random forest classification of microbiome profiles, using the
-hyperparameters from Pasolli et al. 2016. Breiman 2001 proposed random forests, so it goes in
-`citation`. Pasolli 2016 is the published description of this particular parameterization for this
-particular kind of data, so it goes in `publication_doi`. Neither field is optional-by-preference here
-— they record two different facts, and dropping either loses information a reader needs.
+A worked case: a protocol for random forest classification of microbiome profiles using the hyperparameters
+from Pasolli et al. 2016. Breiman 2001 proposed random forests — `method_citation`. Pasolli 2016 published
+this particular parameterization for this kind of data — `protocol_citation`. Neither field is
+optional-by-preference here; they record two different facts, and dropping either loses something a reader
+needs.
 
-Most atomic protocols will have `citation` and nothing else. Reach for `publication_doi` only when a
+**A composite protocol has no `method_citation`.** It proposes no method — it composes protocols that do, and
+inherits their citations. A paper describing the pipeline as a whole is a `protocol_citation`.
+
+Most atomic protocols will have `method_citation` and nothing else. Reach for `protocol_citation` only when a
 paper really does describe or validate the procedure as you have written it — not merely when a paper
 used the method.
 
@@ -100,7 +113,7 @@ paper behind CLR cites prior mathematics, the paper behind PERMANOVA cites permu
 nothing is ever atomic.
 
 **The regress does not actually happen, because a citation is not a method boundary.** The question is
-not whether this protocol's citation has citations of its own. It is whether the protocol *performs*
+not whether this protocol's `method_citation` has citations of its own. It is whether the protocol *performs*
 more than one separately-nameable method as separable steps. Aitchison's paper rests on prior work, but
 the protocol does not perform "take a logarithm" as a decision anyone makes independently — CLR without
 the logarithm is not CLR with a different option selected, it is not CLR. Arithmetic inside a method is
@@ -146,10 +159,10 @@ inputs, produce the same output type, and are interpreted the same way. The choi
 knob, not a different method.
 
 `independent-filtering-variance` is the precedent: `filter: variance | mean`, both proposed in the
-same paper, one citation covering both, with the protocol stating that exactly one must be chosen,
+same paper, one `method_citation` covering both, with the protocol stating that exactly one must be chosen,
 that they must not be applied in sequence, and that the choice is recorded before results are seen.
 
-The citation field is the tell. If the alternatives need two citations, they are two protocols.
+The `method_citation` field is the tell. If the alternatives need two citations, they are two protocols.
 
 This matches how protocols work elsewhere in science: Nature Protocols and protocols.io support
 branch points within a protocol freely, but for procedural variants of one method — not for swapping
@@ -182,7 +195,7 @@ did not happen.
 Some methods are old enough, or folkloric enough, to have no identifiable first publication. When that
 is genuinely the case, say so in the pull request rather than reaching for a convenient recent paper —
 citing an application paper to fill the field is exactly the error this guide is trying to prevent.
-`citation` is optional in the standard; a purely descriptive or reporting protocol may have nothing to
+`method_citation` is optional in the standard; a purely descriptive or reporting protocol may have nothing to
 cite at all.
 
 If you hit this, raise it as an issue in
@@ -194,7 +207,8 @@ about the format, which is not made in this repository.
 
 - The protocol describes one method, and you can name the paper that proposed it.
 - It is a unit someone would compose into more than one analysis, with a plausible substitute.
-- `citation` names the method's origin; `publication_doi`, if present, describes this procedure.
+- `method_citation` names the method's origin; `protocol_citation`, if present, describes this procedure.
+- If a sibling protocol shares your `method_citation`, `## Notes` says how yours differs.
 - Someone could execute it without reading any code.
 - Every parameter has a stated default and a reason.
 - The out-of-scope section exists and is specific.
