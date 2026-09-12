@@ -31,9 +31,6 @@ back to Riester et al. 2014, which introduced the term and the procedure in ovar
 data. Pasolli is the first *microbiome* use — a much narrower claim. Both facts belong in the protocol,
 only one belongs in `method_citation`.
 
-Expect to find that a method you assumed came from one of our own papers is decades older. Sometimes
-it's the other way round, and citing our paper is right. That's the exception.
-
 ## The four citation and DOI fields
 
 Each name says what it identifies. `*_citation` points at other work; `*_doi` identifies a thing.
