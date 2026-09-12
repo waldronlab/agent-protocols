@@ -82,7 +82,7 @@ This protocol covers only the filtering operation. Any downstream testing or mul
 - Rewrote the steps to be language-agnostic, removing the R implementation and describing the filtering operation in prose.
 - Added overall mean filtering as an alternative to overall variance filtering, matching the two strategies described in the source paper.
 - Clarified the `theta` cutoff and the use of `floor()` when determining how many features to remove.
-- Removed `publication_doi`, which duplicated `citation`. *(Both fields were renamed in spec 2.0.0 to `protocol_citation` and `method_citation`; this entry keeps the names in use at the time.)*
+- Removed `publication_doi`, which duplicated `citation`. *(Both fields were later renamed to `protocol_citation` and `method_citation`; this entry keeps the names in use at the time.)*
 
 #### Reviews
 
