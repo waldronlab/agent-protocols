@@ -13,7 +13,7 @@ reviews:
     protocol_version: "1.2.1"
     status: "approved"
 date: "2026-09-03"
-status: "draft"
+status: stable
 type: "atomic"
 license: "CC-BY-4.0"
 method_citation: "10.1073/pnas.0914005107"
