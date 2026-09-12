@@ -7,6 +7,13 @@ in `waldronlab/agent-protocol-standard` is the authority on what a `protocol.md`
 repository holds content only; it does not define or extend the format. If you believe the format
 itself needs to change, open an issue there rather than working around it here.
 
+## Deciding what to write
+
+This file covers mechanics. [`AUTHORING.md`](AUTHORING.md) covers the judgement calls the mechanics
+cannot check: finding the paper that actually proposed a method, recognizing when what looks like one
+protocol is really two, when alternatives may live inside a single protocol, and what to state as out
+of scope. Read it before writing a new protocol.
+
 ## Adding a protocol
 
 1. Create `protocols/<name>/protocol.md`. The directory name must exactly match the `name` field in
