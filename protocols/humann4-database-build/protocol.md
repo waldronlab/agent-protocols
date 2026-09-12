@@ -22,9 +22,11 @@ type: composite
 artifact_doi: ~
 collection_doi: ~
 
-# This composite proposes no method of its own; it inherits the method_citation of each protocol in
-# protocols_used. The eLife paper describes the pipeline as a whole, which makes it a protocol_citation.
-protocol_citation: "10.7554/eLife.65088"
+protocol_citation: ~
+
+# The bioBakery paper proposes this database-construction pipeline as a method, so it belongs here even
+# though the protocol is composite. The constituent protocols' own method_citations are inherited.
+method_citation: "10.7554/eLife.65088"
 
 upstream_repositories:
   - "https://github.com/biobakery/humann"

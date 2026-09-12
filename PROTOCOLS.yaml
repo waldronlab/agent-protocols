@@ -1,6 +1,6 @@
 spec_version: 0.1.0
 repository: waldronlab/agent-protocols
-generated_at: '2026-09-12T19:59:07Z'
+generated_at: '2026-09-12T20:55:35Z'
 protocols:
 - name: humann4-augmented-clustering
   description: Predict ORFs and perform augmented UniRef-compatible protein clustering.
@@ -106,7 +106,8 @@ protocols:
   type: composite
   artifact_doi: ~
   collection_doi: ~
-  protocol_citation: 10.7554/eLife.65088
+  protocol_citation: ~
+  method_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
