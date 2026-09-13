@@ -1,6 +1,6 @@
 spec_version: 0.1.0
 repository: waldronlab/agent-protocols
-generated_at: '2026-09-12T22:50:37Z'
+generated_at: '2026-09-13T02:19:18Z'
 protocols:
 - name: humann4-augmented-clustering
   description: Predict ORFs and perform augmented UniRef-compatible protein clustering.
@@ -18,7 +18,7 @@ protocols:
     protocol_version: 1.0.0
     status: approved
   date: '2026-08-08'
-  status: draft
+  status: stable
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
@@ -60,7 +60,7 @@ protocols:
     protocol_version: 1.0.0
     status: approved
   date: '2026-08-08'
-  status: draft
+  status: stable
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
@@ -101,7 +101,7 @@ protocols:
     protocol_version: 1.0.0
     status: approved
   date: '2026-08-18'
-  status: draft
+  status: stable
   license: CC-BY-4.0
   type: composite
   artifact_doi: ~
@@ -158,7 +158,7 @@ protocols:
     protocol_version: 1.0.0
     status: approved
   date: '2026-08-08'
-  status: draft
+  status: stable
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
@@ -198,7 +198,7 @@ protocols:
     protocol_version: 1.0.0
     status: approved
   date: '2026-08-08'
-  status: draft
+  status: stable
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
@@ -235,7 +235,7 @@ protocols:
     protocol_version: 1.0.0
     status: approved
   date: '2026-08-08'
-  status: draft
+  status: stable
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
@@ -274,7 +274,7 @@ protocols:
     protocol_version: 1.2.1
     status: approved
   date: '2026-09-03'
-  status: draft
+  status: stable
   type: atomic
   license: CC-BY-4.0
   method_citation: 10.1073/pnas.0914005107
