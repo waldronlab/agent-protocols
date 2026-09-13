@@ -24,29 +24,50 @@ example of appropriate tone and level of detail.
 
 Each name says what it identifies. `*_citation` points at other work; `*_doi` identifies a thing.
 
-| Field | Identifies | Points at |
+Two of them are citations, and each answers one question. Answer them separately.
+
+| Field | The question | Required? |
 |---|---|---|
-| `method_citation` | the **method** this protocol performs | the primary literature that proposed it |
-| `protocol_citation` | a publication **describing or validating this protocol** | the procedure as written here, parameters included |
-| `artifact_doi` | **this document**, as a citable artifact | a DOI minted for it, e.g. from protocols.io |
-| `collection_doi` | the **repository or collection** housing it | a Zenodo record |
+| `protocol_citation` | **Who published these instructions?** | Yes |
+| `method_origin_citation` | **Who invented the method?** | No |
+| `artifact_doi` | a DOI for **this document**, e.g. from protocols.io | No |
+| `collection_doi` | a DOI for the **collection** housing it, e.g. a Zenodo record | No |
 
-Protocols carry one `method_citation` and zero or one `protocol_citation`:
+### Who published these instructions?
 
-- Atomic protocols can have method_citation and nothing else. Use protocol_citation only when a paper really does describe the procedure as you've written it, which is in some way distinguished from the general method.
-- Composite protocols automatically inherit the `method_citation` from the protocols they comprise, provide one only if a primary publication describes the workflow as you've defined it. 
-- When to use `protocol_citation`: If a paper describes running a specific sequence of existing methods (e.g., a published pipeline or a specific analysis workflow). There would be no `protocol_citation` only if you are writing a first definition of the protocol.
-`method_citation` is the method in general, `protocol_citation` is precise usage: the parameter values,
-thresholds and choices this protocol specifies. Be sure to cite the primary literature that proposed the method
-or defined the protocol, not a later paper that used the method or protocol.
+If you wrote this protocol from a paper's methods section, that paper. If you wrote it yourself, nobody
+did — so name this protocol's own DOI instead: `artifact_doi` if it has one, otherwise `collection_doi`.
 
-One method can be the basis of several protocols; for example, Random Forest classification is a method with one
-origin, with many published parameterizations that give different answers from the
-same data. Each is its own protocol; they share a `method_citation` but differ in `protocol_citation`.
+That is not a formality. Repeating `collection_doi` here is how a protocol says **"first definition,
+published here"**, and it is the normal answer for a protocol written in this repository:
 
-If you're unsure which field a DOI belongs in, ask whether it would still be right if you rewrote the
-steps. A method's origin survives a rewrite, so that's `method_citation`. A paper describing this
-procedure doesn't, so that's `protocol_citation`. 
+```yaml
+# transcribed from a published analysis
+protocol_citation: "10.1038/s41591-019-0405-7"
+
+# written here; nobody published this procedure before
+protocol_citation: "10.5281/zenodo.22731694"   # this repository's concept DOI
+```
+
+Use the concept DOI, not a version DOI. A version DOI would name the exact bytes, but you cannot write
+the DOI of a release that does not exist yet.
+
+### Who invented the method?
+
+The primary literature where the method was **first proposed** — not a paper that used it. Leave-one-
+dataset-out cross-validation was first applied to microbiome data by Pasolli 2016, but proposed by
+Riester 2014. Riester is the answer; citing Pasolli here is the mistake this field exists to prevent.
+
+**Omit the field if the protocol originates no method.** Documenting how to build a tool's reference
+database is not a method somebody proposed. An omitted field is honest; one filled in to satisfy CI is
+not, and nothing in the validator can tell the difference.
+
+A composite inherits its constituents' origins automatically. Give it one of its own only where the
+composition was itself published as a method.
+
+One method can be the basis of several protocols. Random forest classification has one origin and many
+published parameterizations that give different answers from the same data. Each is its own protocol:
+they share a `method_origin_citation` and differ in `protocol_citation`.
 
 ## If one paper didn't propose everything the protocol does, it's more than one protocol
 
@@ -82,10 +103,10 @@ A protocol can offer a choice when the alternatives come from the same source, t
 produce the same kind of output, and mean the same thing. Then it's a tuning knob, not a different protocol.
 
 [independent-filtering-variance](agent-protocols/protocols/independent-filtering-variance) is the precedent: `filter: variance | mean`, both from the same paper, one
-`method_citation` covering both, and the protocol says exactly one must be chosen, that they must not be
+`method_origin_citation` covering both, and the protocol says exactly one must be chosen, that they must not be
 applied in sequence, and that the choice is recorded before anyone looks at results.
 
-`method_citation` is the tell. If the alternatives need two citations, they're two protocols.
+`method_origin_citation` is the tell. If the alternatives need two citations, they're two protocols.
 
 This is how protocols work elsewhere too. Nature Protocols and protocols.io allow branch points freely, but
 for procedural variants of one method, not for swapping in a different method by a different author. OECD
@@ -112,7 +133,7 @@ Where a choice has to be made — a filter, a threshold, a candidate list — ma
 
 Rare, but some methods are old or folkloric enough to have no identifiable first publication. Say so instead of reaching for a convenient recent paper.
 
-A missing `method_citation` validates today, so nothing stops you leaving it out. Descriptive protocols that
+A missing `method_origin_citation` validates today, so nothing stops you leaving it out. Descriptive protocols that
 claim no method — a study table, a corpus summary — legitimately have nothing to cite. For a protocol that
 does run a named method, an empty field is a question to raise, not an answer.
 
@@ -123,8 +144,8 @@ does run a named method, an empty field is a question to raise, not an answer.
   it. Composite: its steps name the constituent protocols and the order, without restating what those
   protocols already say. 
 - It's a unit that can be reused in different analyses.
-- `method_citation` is the method's origin. `protocol_citation`, if present, describes this procedure.
-- If a sibling protocol shares your `method_citation`, `## Notes` says how yours differs.
+- `method_origin_citation` is the method's origin. `protocol_citation`, if present, describes this procedure.
+- If a sibling protocol shares your `method_origin_citation`, `## Notes` says how yours differs.
 - An expert in the field could have a complete picture of the protocol without reading any code.
 - Every configurable parameter has a stated default. Required inputs (data, software, parameters) are stated in the Materials section.
 - The out-of-scope section exists and is specific.

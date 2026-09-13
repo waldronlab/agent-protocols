@@ -16,7 +16,7 @@ Do not write the complex YAML frontmatter from scratch. Instead, copy the offici
 ## Step 3: Write
 Read [`AUTHORING.md`](AUTHORING.md) for philosophical guidelines on how to write your protocol. It covers the judgement calls that CI cannot check: finding the paper that actually proposed a method, recognizing when what looks like one protocol is really two, and what to state as out of scope.
 
-Fill in the required frontmatter (`name`, `description`, `version`, `authors`, `date`, `status`, `method_citation`) and write the human-readable instructions.
+Fill in the required frontmatter (`name`, `description`, `version`, `authors`, `date`, `status`, `protocol_citation`) and write the human-readable instructions. Add `method_origin_citation` where the protocol performs a method someone proposed; see [AUTHORING.md](AUTHORING.md).
 
 End the file with a `## History & Reviews` section as demonstrated in the template. Omit the `reviews:` frontmatter field entirely until someone has actually reviewed it.
 
