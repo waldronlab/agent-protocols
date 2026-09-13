@@ -39,13 +39,18 @@ If you wrote this protocol from a paper's methods section, that paper. If you wr
 did — so name this protocol's own DOI instead: `artifact_doi` if it has one, otherwise `collection_doi`.
 
 That is not a formality. Repeating `collection_doi` here is how a protocol says **"first definition,
-published here"**, and it is the normal answer for a protocol written in this repository:
+published here"** rather than leaving a gap a reader has to interpret. No protocol in this repository
+does so today — every one of them encodes a published procedure — so expect the first case more often:
+
+Transcribed from a published analysis:
 
 ```yaml
-# transcribed from a published analysis
 protocol_citation: "10.1038/s41591-019-0405-7"
+```
 
-# written here; nobody published this procedure before
+Written here, with no publication describing the procedure:
+
+```yaml
 protocol_citation: "10.5281/zenodo.22731694"   # this repository's concept DOI
 ```
 
@@ -54,13 +59,11 @@ the DOI of a release that does not exist yet.
 
 ### Who invented the method?
 
-The primary literature where the method was **first proposed** — not a paper that used it. Leave-one-
-dataset-out cross-validation was first applied to microbiome data by Pasolli 2016, but proposed by
-Riester 2014. Riester is the answer; citing Pasolli here is the mistake this field exists to prevent.
+The primary literature where the method was **first proposed** — not a paper that used it. A paper that
+applies an established method is the commonest wrong answer here, because it is usually the paper you
+read.
 
-**Omit the field if the protocol originates no method.** Documenting how to build a tool's reference
-database is not a method somebody proposed. An omitted field is honest; one filled in to satisfy CI is
-not, and nothing in the validator can tell the difference.
+Omit the field if the protocol performs no method somebody proposed.
 
 A composite inherits its constituents' origins automatically. Give it one of its own only where the
 composition was itself published as a method.
@@ -91,7 +94,7 @@ into its own protocol.
 3. **Does it have a name people use?** A named method is citable; a step inside one isn't. Usually why the
    naming question and the citation question give the same answer.
 
-Another way to think about it is: in a methods section, would you say "we did X", ie name the procedure? If so, it's a protocol. Or would you say, "we did X as part of Y". If so, X is likely a step in protocol Y.
+Another way to think about it is: in a methods section, would you say "we did X", i.e. name the procedure? If so, it's a protocol. Or would you say, "we did X as part of Y". If so, X is likely a step in protocol Y.
 
 Some cases are arguable. Geometric mean _does_ have other uses, but for microbiome researchers I (Levi)
 can only think of its use inside CLR, and it wouldn't be much burden to redefine it elsewhere if needed, so I 
