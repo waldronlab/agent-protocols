@@ -35,24 +35,24 @@ Two of them are citations, and each answers one question. Answer them separately
 
 ### Who published these instructions?
 
-If you wrote this protocol from a paper's methods section, that paper. If you wrote it yourself, nobody
-did — so name this protocol's own DOI instead: `artifact_doi` if it has one, otherwise `collection_doi`.
-
-That is not a formality. Repeating `collection_doi` here is how a protocol says **"first definition,
-published here"** rather than leaving a gap a reader has to interpret. No protocol in this repository
-does so today — every one of them encodes a published procedure — so expect the first case more often:
-
-Transcribed from a published analysis:
+Almost always: the paper whose methods section you wrote this protocol from.
 
 ```yaml
 protocol_citation: "10.1038/s41591-019-0405-7"
 ```
 
-Written here, with no publication describing the procedure:
+**The exception, which should be rare.** If no publication describes the procedure — you are writing a
+genuine first definition — name this protocol's own DOI instead: `artifact_doi` if it has one, otherwise
+`collection_doi`.
 
 ```yaml
 protocol_citation: "10.5281/zenodo.22731694"   # this repository's concept DOI
 ```
+
+Repeating `collection_doi` here is how a protocol states "published here" rather than leaving a gap a
+reader has to interpret. Reach for it only after looking for the paper and concluding there is none: no
+protocol in this repository needs it today, `independent-filtering-variance` included — it encodes what
+Bourgon 2010 describes, so Bourgon is the answer.
 
 Use the concept DOI, not a version DOI. A version DOI would name the exact bytes, but you cannot write
 the DOI of a release that does not exist yet.
