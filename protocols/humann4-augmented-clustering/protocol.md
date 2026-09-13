@@ -21,9 +21,8 @@ type: atomic
 
 artifact_doi: ~
 collection_doi: "10.5281/zenodo.22731694"
-protocol_citation: ~
-
-method_citation: "10.1016/j.cell.2019.01.001"
+protocol_citation: "10.7554/eLife.65088"
+method_origin_citation: "10.1016/j.cell.2019.01.001"
 
 upstream_repositories:
   - "https://github.com/biobakery/humann"
