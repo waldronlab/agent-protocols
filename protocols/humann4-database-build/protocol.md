@@ -20,7 +20,7 @@ license: CC-BY-4.0
 type: composite
 
 artifact_doi: ~
-collection_doi: ~
+collection_doi: "10.5281/zenodo.22731694"
 
 protocol_citation: ~
 

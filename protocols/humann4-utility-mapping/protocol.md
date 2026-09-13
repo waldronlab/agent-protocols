@@ -20,7 +20,7 @@ license: CC-BY-4.0
 type: atomic
 
 artifact_doi: ~
-collection_doi: ~
+collection_doi: "10.5281/zenodo.22731694"
 protocol_citation: ~
 
 method_citation: "10.7554/eLife.65088"

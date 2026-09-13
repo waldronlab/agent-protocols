@@ -15,6 +15,10 @@ reviews:
 date: "2026-09-03"
 status: stable
 type: "atomic"
+
+artifact_doi: ~
+collection_doi: "10.5281/zenodo.22731694"
+protocol_citation: ~
 license: "CC-BY-4.0"
 method_citation: "10.1073/pnas.0914005107"
 protocols_used: []
