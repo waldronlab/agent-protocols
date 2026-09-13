@@ -1,6 +1,6 @@
 spec_version: 0.1.0
 repository: waldronlab/agent-protocols
-generated_at: '2026-09-13T02:19:18Z'
+generated_at: '2026-09-13T03:03:33Z'
 protocols:
 - name: humann4-augmented-clustering
   description: Predict ORFs and perform augmented UniRef-compatible protein clustering.
@@ -22,7 +22,7 @@ protocols:
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
-  collection_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
   protocol_citation: ~
   method_citation: 10.1016/j.cell.2019.01.001
   upstream_repositories:
@@ -64,7 +64,7 @@ protocols:
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
-  collection_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
   protocol_citation: ~
   method_citation: 10.7554/eLife.65088
   upstream_repositories:
@@ -105,7 +105,7 @@ protocols:
   license: CC-BY-4.0
   type: composite
   artifact_doi: ~
-  collection_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
   protocol_citation: ~
   method_citation: 10.7554/eLife.65088
   upstream_repositories:
@@ -162,7 +162,7 @@ protocols:
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
-  collection_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
   protocol_citation: ~
   method_citation: 10.1016/j.cell.2019.01.001
   upstream_repositories:
@@ -202,7 +202,7 @@ protocols:
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
-  collection_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
   protocol_citation: ~
   method_citation: 10.7554/eLife.65088
   upstream_repositories:
@@ -239,7 +239,7 @@ protocols:
   license: CC-BY-4.0
   type: atomic
   artifact_doi: ~
-  collection_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
   protocol_citation: ~
   method_citation: 10.7554/eLife.65088
   upstream_repositories:
@@ -276,6 +276,9 @@ protocols:
   date: '2026-09-03'
   status: stable
   type: atomic
+  artifact_doi: ~
+  collection_doi: 10.5281/zenodo.22731694
+  protocol_citation: ~
   license: CC-BY-4.0
   method_citation: 10.1073/pnas.0914005107
   protocols_used: []
