@@ -15,7 +15,7 @@ reviews:
     protocol_version: 1.0.0
     status: approved
 date: 2026-08-08
-status: draft
+status: stable
 license: CC-BY-4.0
 type: atomic
 
