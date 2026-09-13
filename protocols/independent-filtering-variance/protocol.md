@@ -18,7 +18,7 @@ type: "atomic"
 
 artifact_doi: ~
 collection_doi: "10.5281/zenodo.22731694"
-protocol_citation: "10.5281/zenodo.22731694"
+protocol_citation: "10.1073/pnas.0914005107"
 license: "CC-BY-4.0"
 method_origin_citation: "10.1073/pnas.0914005107"
 protocols_used: []

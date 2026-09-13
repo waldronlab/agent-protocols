@@ -23,7 +23,7 @@ End the file with a `## History & Reviews` section as demonstrated in the templa
 ## Step 4: Validate and Submit
 Open a pull request. **You can rely on CI for validation.** The repository's automated testing infrastructure will check your syntax and tell you precisely what is wrong. Focus on getting the scientific correctness right.
 
-*(If you prefer to run the validator locally before pushing, you can clone `waldronlab/agent-protocol-standard` and run `Rscript scripts/validate-protocol.R <path-to-your-protocol>`)*
+*(To run the validator locally before pushing, clone `waldronlab/agent-protocol-standard` beside this repository and, from here, run `Rscript ../agent-protocol-standard/scripts/validate-protocol.R protocols`. It takes the protocols directory, not a single file, and validates every protocol in it.)*
 
 ---
 
