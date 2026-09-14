@@ -23,7 +23,7 @@ End the file with a `## History & Reviews` section as demonstrated in the templa
 ## Step 4: Validate and Submit
 Open a pull request. **You can rely on CI for validation.** The repository's automated testing infrastructure will check your syntax and tell you precisely what is wrong. Focus on getting the scientific correctness right.
 
-*(To run the validator locally before pushing, clone `waldronlab/agent-protocol-standard` beside this repository and, from here, run `Rscript ../agent-protocol-standard/scripts/validate-protocol.R protocols`. It takes the protocols directory, not a single file, and validates every protocol in it.)*
+*(To run the validator locally before pushing, clone `waldronlab/agent-protocol-standard` beside this repository, install its dependencies with `pip install 'pydantic>=2.0.0' pyyaml`, and from here run `python3 ../agent-protocol-standard/scripts/validate_protocol.py protocols`. It takes the protocols directory, not a single file, and validates every protocol in it.)*
 
 ---
 
