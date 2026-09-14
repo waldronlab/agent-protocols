@@ -9,8 +9,10 @@ on:
       - 'protocols/**'
       - '.github/workflows/generate-index.yml'
 
+# The push uses the App installation token, not GITHUB_TOKEN, so GITHUB_TOKEN needs no write
+# access. Granting it would hand every step a second write-capable credential for nothing.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   generate-index:
@@ -29,6 +31,9 @@ jobs:
         with:
           app-id: ${{ secrets.INDEX_APP_ID }}
           private-key: ${{ secrets.INDEX_APP_PRIVATE_KEY }}
+          # Request the scope explicitly rather than inheriting whatever the installation holds, so
+          # granting the App another permission later cannot silently widen this token.
+          permission-contents: write
 
       - uses: actions/checkout@v4
         with:
@@ -38,3 +43,8 @@ jobs:
       # the standard it claims to follow. Pin @v0.3.0 or a commit SHA instead if you need the action
       # to be immutable, and accept updating it by hand.
       - uses: waldronlab/agent-protocol-standard/actions/generate-index@v0
+        with:
+          # Attribute the commit to the App that pushes it, rather than to github-actions[bot],
+          # which no longer has anything to do with this push.
+          committer-name: ${{ steps.app-token.outputs.app-slug }}[bot]
+          committer-email: ${{ secrets.INDEX_APP_ID }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com
