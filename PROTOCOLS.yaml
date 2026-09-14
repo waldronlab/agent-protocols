@@ -1,6 +1,6 @@
 spec_version: 0.1.0
 repository: waldronlab/agent-protocols
-generated_at: '2026-09-13T03:03:33Z'
+generated_at: '2026-09-14T01:37:06Z'
 protocols:
 - name: humann4-augmented-clustering
   description: Predict ORFs and perform augmented UniRef-compatible protein clustering.
@@ -21,10 +21,10 @@ protocols:
   status: stable
   license: CC-BY-4.0
   type: atomic
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
-  method_citation: 10.1016/j.cell.2019.01.001
+  protocol_citation: 10.7554/eLife.65088
+  method_origin_citation: 10.1016/j.cell.2019.01.001
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
@@ -63,10 +63,9 @@ protocols:
   status: stable
   license: CC-BY-4.0
   type: atomic
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
-  method_citation: 10.7554/eLife.65088
+  protocol_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
@@ -104,10 +103,9 @@ protocols:
   status: stable
   license: CC-BY-4.0
   type: composite
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
-  method_citation: 10.7554/eLife.65088
+  protocol_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/metaphlan
@@ -161,10 +159,10 @@ protocols:
   status: stable
   license: CC-BY-4.0
   type: atomic
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
-  method_citation: 10.1016/j.cell.2019.01.001
+  protocol_citation: 10.7554/eLife.65088
+  method_origin_citation: 10.1016/j.cell.2019.01.001
   upstream_repositories:
   - https://github.com/biobakery/metaphlan
   - https://github.com/biobakery/panphlan
@@ -201,14 +199,14 @@ protocols:
   status: stable
   license: CC-BY-4.0
   type: atomic
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
-  method_citation: 10.7554/eLife.65088
+  protocol_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/biobakery/biobakery-nextflow
-  database_urls: http://huttenhower.sph.harvard.edu/humann_data/uniprot/uniref_annotated/
+  database_urls:
+  - http://huttenhower.sph.harvard.edu/humann_data/uniprot/uniref_annotated/
   protocols_used: []
   key_packages: []
   category: metagenomics
@@ -238,10 +236,9 @@ protocols:
   status: stable
   license: CC-BY-4.0
   type: atomic
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
-  method_citation: 10.7554/eLife.65088
+  protocol_citation: 10.7554/eLife.65088
   upstream_repositories:
   - https://github.com/biobakery/humann
   - https://github.com/eggnogdb/eggnog-mapper
@@ -276,11 +273,11 @@ protocols:
   date: '2026-09-03'
   status: stable
   type: atomic
-  artifact_doi: ~
+  artifact_doi: null
   collection_doi: 10.5281/zenodo.22731694
-  protocol_citation: ~
+  protocol_citation: 10.1073/pnas.0914005107
   license: CC-BY-4.0
-  method_citation: 10.1073/pnas.0914005107
+  method_origin_citation: 10.1073/pnas.0914005107
   protocols_used: []
   category: Statistical Analysis
   tags:
@@ -289,4 +286,3 @@ protocols:
   - mean
   - high-throughput
   protocol_url: https://raw.githubusercontent.com/waldronlab/agent-protocols/main/protocols/independent-filtering-variance/protocol.md
-
