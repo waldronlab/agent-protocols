@@ -14,6 +14,13 @@ on:
 permissions:
   contents: read
 
+# Two merges in quick succession would otherwise run concurrently, and the second push would be
+# rejected as non-fast-forward: its checkout predates the first run's index commit. Queue instead of
+# cancelling — a cancelled run leaves the index describing the previous commit.
+concurrency:
+  group: generate-index
+  cancel-in-progress: false
+
 jobs:
   generate-index:
     runs-on: ubuntu-latest
@@ -38,6 +45,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
+      # The email prefix below is the bot's user id, which is NOT the App registration id held in
+      # INDEX_APP_ID. Getting it wrong still pushes, but GitHub does not link the commit to the bot.
+      - name: Resolve the App's bot user id
+        id: bot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.app-token.outputs.app-slug }}
+        run: echo "id=$(gh api "/users/${SLUG}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+
       # @main, not a release tag. @v0 resolved to a commit from before the Python rewrite, so this
       # workflow was silently running the old R generator while CI stayed green. A generator that
       # has fallen behind produces an index that disagrees with the standard it claims to follow.
@@ -46,4 +62,4 @@ jobs:
           # Attribute the commit to the App that pushes it, rather than to github-actions[bot],
           # which no longer has anything to do with this push.
           committer-name: ${{ steps.app-token.outputs.app-slug }}[bot]
-          committer-email: ${{ secrets.INDEX_APP_ID }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com
+          committer-email: ${{ steps.bot.outputs.id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com
