@@ -67,9 +67,9 @@ test hypotheses, or interpret the resulting values.
     logarithm, which gives the index in nats; `2` gives bits. It must be `e` or a number
     greater than 1.
 - **Software & Repositories:**
-  - `vegan` (https://github.com/vegandevs/vegan) — R package; `diversity()` computes
-    Step 2.
-  - `scikit-bio` (https://github.com/scikit-bio/scikit-bio) — Python package;
+  - `vegan` (CRAN: https://cran.r-project.org/package=vegan) — R package;
+    `diversity()` computes Step 2.
+  - `scikit-bio` (PyPI: https://pypi.org/project/scikit-bio/) — Python package;
     `skbio.diversity.alpha.shannon()` computes Step 2.
   - Either is optional. Any implementation that follows Steps 1 and 2 is acceptable.
 
