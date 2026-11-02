@@ -1,0 +1,11 @@
+name: proportions_not_summing_to_one
+description: A proportions sample summing to 0.9 must be refused rather than renormalized.
+inputs:
+  data: {path: input.csv}
+  input_scale: proportions
+  log_base: e
+evaluation:
+  mode: diagnostic
+  accepted_outcomes:
+    - outcome: refused_for_proportions_not_summing_to_one
+      expected_absent: [result]

@@ -1,0 +1,11 @@
+name: rarefied_counts
+description: Counts rarefied to a common depth of 8 give per-sample Shannon values in bits, including zero for a sample with a single nonzero feature.
+inputs:
+  data: {path: input.csv}
+  input_scale: counts
+  log_base: 2
+expected_outputs:
+  result: {path: expected.csv}
+evaluation:
+  mode: exact
+  numeric_tolerance: 1.0e-12

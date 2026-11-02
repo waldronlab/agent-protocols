@@ -1,0 +1,5 @@
+feature_id,sample_a,sample_b,sample_c
+feature_1,2,4,8
+feature_2,2,2,0
+feature_3,2,2,0
+feature_4,2,0,0
