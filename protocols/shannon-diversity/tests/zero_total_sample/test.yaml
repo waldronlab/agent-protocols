@@ -1,0 +1,11 @@
+name: zero_total_sample
+description: A count sample whose total is zero has undefined proportions, so the calculation stops with no output.
+inputs:
+  data: {path: input.csv}
+  input_scale: counts
+  log_base: e
+evaluation:
+  mode: diagnostic
+  accepted_outcomes:
+    - outcome: refused_for_zero_total_sample
+      expected_absent: [result]
