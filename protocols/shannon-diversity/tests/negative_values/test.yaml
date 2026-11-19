@@ -1,0 +1,11 @@
+name: negative_values
+description: A negative abundance must stop the calculation rather than be dropped, zeroed, or made positive.
+inputs:
+  data: {path: input.csv}
+  input_scale: counts
+  log_base: e
+evaluation:
+  mode: diagnostic
+  accepted_outcomes:
+    - outcome: refused_for_negative_values
+      expected_absent: [result]

@@ -1,0 +1,11 @@
+name: proportions
+description: Proportions that sum to 1 are used as given, with zero proportions omitted from the sum.
+inputs:
+  data: {path: input.csv}
+  input_scale: proportions
+  log_base: 2
+expected_outputs:
+  result: {path: expected.csv}
+evaluation:
+  mode: exact
+  numeric_tolerance: 1.0e-12

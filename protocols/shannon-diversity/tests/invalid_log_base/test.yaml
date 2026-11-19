@@ -1,0 +1,11 @@
+name: invalid_log_base
+description: A log base below 1 must be refused rather than used, which would give negative Shannon values.
+inputs:
+  data: {path: input.csv}
+  input_scale: counts
+  log_base: 0.5
+evaluation:
+  mode: diagnostic
+  accepted_outcomes:
+    - outcome: refused_for_invalid_log_base
+      expected_absent: [result]

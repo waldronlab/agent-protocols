@@ -1,0 +1,15 @@
+name: features_in_columns
+description: Samples in rows and features in columns; the executor transposes the table and computes per-sample values, or refuses.
+inputs:
+  data: {path: input.csv}
+  input_scale: counts
+  log_base: 2
+evaluation:
+  mode: diagnostic
+  numeric_tolerance: 1.0e-12
+  accepted_outcomes:
+    - outcome: orientation_corrected
+      expected_outputs:
+        result: {path: expected.csv}
+    - outcome: refused_for_orientation
+      expected_absent: [result]
